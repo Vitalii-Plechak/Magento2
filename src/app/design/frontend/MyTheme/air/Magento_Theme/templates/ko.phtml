@@ -1,0 +1,33 @@
+<div class="contents_ko" data-bind="scope:'testComponent'">
+    <input type="text" data-bind="value: inputVal">
+    <!-- ko if: isVisible -->
+    <p data-bind="text: inputVal"></p>
+    <!-- /ko -->
+    <button class="buttonKo" data-bind="click: clickButton">Click</button>
+</div>
+
+<!--Homework-->
+
+<div class="contents_ko_HW" data-bind="scope:'testComponentHw'">
+    <input type="text" data-bind="textInput: inputValHw, hasFocus: isSelected">
+    <input type="text" data-bind="value: inputValHw">
+
+</div>
+
+
+<script type="text/x-magento-init">
+    {
+        ".contents_ko": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "testComponent": {
+                        "component": "ko_js"
+                    },
+                    "testComponentHw": {
+                        "component": "ko_js"
+                    }
+                }
+            }
+        }
+    }
+</script>

@@ -1,0 +1,34 @@
+<?php
+/**
+ * Product description template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Description
+ */
+?>
+
+<?php
+$product = $block->getProduct();
+?>
+<div class="detail-inner">
+    <div class="detail-content">
+        <?= /* @noEscape */ $this->helper(Magento\Catalog\Helper\Output::class)->productAttribute(
+            $block->getProduct(),
+            $block->getProduct()->getData('detail_product'),
+            'Detail Product'
+        ) ?>
+    </div>
+
+    <div class="our-mission" <?php if ($block->getProduct()->getData('detail_product') != null){echo "style='display: block';";}else{echo "style='display: none';";} ?>>
+        <div class="our-mission-text-container">
+            <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('our-mission-container')->toHtml();?>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "mainjs": {"our-mission": "our_mission"}
+        }
+    }
+</script>

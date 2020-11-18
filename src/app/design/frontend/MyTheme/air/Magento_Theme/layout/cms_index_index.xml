@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<update handle="default_head_blocks"/>
+<body>
+    <referenceContainer name="main">
+        <container name="hero" htmlClass="hero" htmlTag="section">
+            <block name="hero-block" template="Magento_Theme::hero.phtml"></block>
+        </container>
+        <container name="hero-info" htmlClass="hero-info" htmlTag="section">
+            <block name="hero-info-block" template="Magento_Theme::hero-info.phtml"></block>
+        </container>
+        <container name="tis" htmlClass="tis" htmlTag="section">
+            <block name="tis-block" template="Magento_Theme::tis.phtml"></block>
+        </container>
+        <container name="categories" htmlClass="categories" htmlTag="section">
+            <block name="categories-block" template="Magento_Theme::categories.phtml"></block>
+        </container>
+        <container name="ship-container" htmlClass="ship-container" htmlTag="section">
+            <block name="ship-container-block" template="Magento_Theme::ship-container.phtml"></block>
+        </container>
+        <container name="banner-exclusive" htmlClass="banner-exclusive" htmlTag="section">
+            <block name="banner-exclusive-block" template="Magento_Theme::banner-exclusive.phtml"></block>
+        </container>
+        <container name="features-second" htmlClass="features-second" htmlTag="section">
+            <block name="features-second-block" template="Magento_Theme::features-second.phtml"></block>
+        </container>
+        <container name="products-slider" htmlClass="products-slider" htmlTag="section">
+            <block name="products-slider-block" template="Magento_Theme::products-slider.phtml"></block>
+        </container>
+        <container name="video-presentation" htmlClass="video-presentation" htmlTag="section">
+            <block name="video-presentation-block" template="Magento_Theme::video-presentation.phtml"></block>
+        </container>
+        <container name="banner-discount" htmlClass="banner-discount" htmlTag="section">
+            <block name="banner-discount-block" template="Magento_Theme::banner-discount.phtml"></block>
+        </container>
+        <container name="company" htmlClass="company" htmlTag="section">
+            <block name="company-block" template="Magento_Theme::company.phtml"></block>
+        </container>
+        <container name="journey" htmlClass="journey" htmlTag="section">
+            <block name="journey-block" template="Magento_Theme::journey.phtml"></block>
+        </container>
+        <container name="accordion" htmlClass="accordion" htmlTag="section">
+            <block name="accordion-block" template="Magento_Theme::accordion.phtml"></block>
+        </container>
+        <container name="modal-widget" htmlClass="modal-widget" htmlTag="section">
+            <block name="modal-widget-block" template="Magento_Theme::modal-widget.phtml"></block>
+        </container>
+        <container name="tab" htmlClass="tab" htmlTag="section">
+            <block name="tab-block" template="Magento_Theme::tab.phtml"></block>
+        </container>
+    </referenceContainer>
+</body>
+</page>
+
