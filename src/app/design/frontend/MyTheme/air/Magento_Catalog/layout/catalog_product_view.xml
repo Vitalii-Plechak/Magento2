@@ -74,10 +74,10 @@
                     </block>
                 </container>
                 <container name="banner_product" htmlClass="banner_product" htmlTag="div">
-                    <block name="banner_product-block" template="Magento_Theme::banner-product.phtml"></block>
+                    <block name="banner_product-block" template="Magento_Catalog::banner-product.phtml"></block>
                 </container>
                 <container name="size-chart" htmlClass="size-chart" htmlTag="div">
-                    <block name="size-chart-block" template="Magento_Theme::size-chart.phtml"></block>
+                    <block name="size-chart-block" template="Magento_Catalog::size-chart.phtml"></block>
                 </container>
                 <block class="Magento\Catalog\Pricing\Render" name="product.price.tier" after="product.info.price">
                     <arguments>
@@ -183,13 +183,13 @@
                         <argument name="sort_order" xsi:type="string">20</argument>
                     </arguments>
                 </block>
-                <block class="Magento\Catalog\Block\Product\View" name="detail.product" template="Magento_Theme::detail-product.phtml" group="detailed_info">
+                <block class="Magento\Catalog\Block\Product\View" name="detail.product" template="Magento_Catalog::detail-product.phtml" group="detailed_info">
                     <arguments>
                         <argument translate="true" name="title" xsi:type="string">Detail</argument>
                         <argument name="sort_order" xsi:type="string">30</argument>
                     </arguments>
                 </block>
-                <block class="Magento\Catalog\Block\Product\View" name="ship.returns" template="Magento_Theme::ship-returns.phtml" group="detailed_info">
+                <block class="Magento\Catalog\Block\Product\View" name="ship.returns" template="Magento_Catalog::ship-returns.phtml" group="detailed_info">
                     <arguments>
                         <argument translate="true" name="title" xsi:type="string">Shipping &amp; Free Returns</argument>
                         <argument name="sort_order" xsi:type="string">40</argument>
@@ -206,7 +206,7 @@
         </referenceContainer>
         <referenceContainer name="content">
             <container name="why-love-it" htmlClass="custom-block why-love-it" htmlTag="div">
-                <block name="why-love-it-block" template="Magento_Theme::why-we-love-it.phtml"></block>
+                <block name="why-love-it-block" template="Magento_Catalog::why-we-love-it.phtml"></block>
             </container>
         </referenceContainer>
         <referenceContainer name="content.aside">

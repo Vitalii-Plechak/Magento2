@@ -14,10 +14,8 @@ define ([
         // вызов инлайновой функции из phtml
         options:{
             wrapper_fancybox: null,
-            size_chart: null,
             wrapper_accordion: null,
             wrapper_tab: null,
-            size_chart_tab: null,
             product_accordion: null,
             our_mission: null,
             triggerClass: '.click-second',
@@ -33,7 +31,6 @@ define ([
         _create: function() {
             let self = this;
             this.createFancybox();
-            this.createSizeChart();
             this.createSwiper();
             this.createAccordion();
             this.createProductAccordion();
@@ -42,7 +39,6 @@ define ([
                 self.showThisBlock()
             });
             this.createTab();
-            this.createSizeChartTab();
         },
         hideElement: function () {
             // var element = $(".our-mission").attr("display", "none");
@@ -95,12 +91,6 @@ define ([
                     return $(this).parent().find('.card-text').html();
                 }
             })
-        },
-        createSizeChart: function () {
-            $(this.element).fancybox()
-        },
-        createSizeChartTab: function () {
-            $(this.element).tabs()
         },
         createAccordion: function () {
             $(this.element).accordion()

@@ -12,19 +12,24 @@ var config = {
     // },
     map: {
         '*': {
-            testjs : 'Magento_Theme/js/test',
-            test_2js : 'Magento_Theme/js/test_2',
-            mainjs : 'Magento_Theme/js/main',
             ko_js : 'Magento_Theme/js/ko',
             slick : 'Magento_Theme/js/libs/slick-min',
             swiper : 'Magento_Theme/js/libs/swiper-bundle-min',
+            swiperCatalog : 'Magento_Catalog/js/libs/swiper-bundle-min',
             fancybox : 'Magento_Theme/js/libs/jquery.fancybox.min',
-            modal : 'Magento_Ui/js/modal/modal'
+            modal : 'Magento_Ui/js/modal/modal',
+            testjs : 'Magento_Theme/js/test',
+            test_2js : 'Magento_Theme/js/test_2',
+            mainjs : 'Magento_Theme/js/main',
+            catalogjs : 'Magento_Catalog/js/catalog',
         }
     },
     shim: {
         swiper: {
             deps: ['jquery']
+        },
+        catalogjs: {
+            deps: ['siqens!']
         }
     }
 };

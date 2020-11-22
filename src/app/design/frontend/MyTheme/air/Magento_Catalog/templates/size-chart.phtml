@@ -2,19 +2,30 @@
 <div class="container">
     <a data-fancybox data-src="#modal" href="javascript:;" class="btn btn-primary size-chart-btn">Size Chart</a>
     <div style="display: none;" id="modal">
-        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('size-chart')->toHtml();?>
+        <div class="tab-wrapper">
+            <div class="product data items size-chart-tab">
+                <div class="item title" data-role="collapsible"><a class="switch" href="#tab-inches" data-toggle="trigger">Inches</a></div>
+                <div id="tab-inches" class="item content" data-role="content">
+                    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('sizeChartInches')->toHtml();?>
+                </div>
+                <div class="item title" data-role="collapsible"><a class="switch" href="#tab-centimeters" data-toggle="trigger">Centimeters</a></div>
+                <div id="tab-centimeters" class="item content" data-role="content">
+                    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('sizeChartCentimeters')->toHtml();?>
+                </div>
+            </div>
+        </div>
+        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('helpfulTips')->toHtml();?>
     </div>
 </div>
 
 <script type="text/x-magento-init">
     {
         ".size-chart-btn": {
-            "mainjs": {"size_chart": "size-chart"}
+            "catalogjs": {"size_chart": "size-chart"}
         },
         ".tab-wrapper": {
-            "mainjs": {"size_chart_tab": "size-chart-tab"}
+            "catalogjs": {"size_chart_tab": "size-chart-tab"}
         }
     }
 </script>
-
 
