@@ -12,11 +12,6 @@
         <referenceBlock name="view.addto.compare" remove="true" />
         <referenceBlock name="header" remove="true"/>
 <!-- remove element-->
-        <referenceContainer name="header.container" >
-            <container name="wrapper_block" htmlClass="wrapper_block" htmlTag="div">
-<!--                <block name="test-js" template="Magento_Theme::test-js.phtml"></block>-->
-            </container>
-        </referenceContainer>
         <referenceBlock name="header.links">
             <block class="Magento\Framework\View\Element\Html\Link" name="test_li" before="-">
                 <arguments>
@@ -26,18 +21,5 @@
                 </arguments>
             </block>
         </referenceBlock>
-        <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template" name="test" template="Magento_Theme::test.phtml">
-                <arguments>
-                    <argument name="test_data" xsi:type="string">test data</argument>
-                </arguments>
-            </block>
-            <block class="Magento\Framework\View\Element\Template" name="test-link">
-                <arguments>
-                    <argument name="title" xsi:type="string">test title header links</argument>
-                    <argument name="path" xsi:type="string">/contact</argument>
-                </arguments>
-            </block>
-        </referenceContainer>
     </body>
 </page>

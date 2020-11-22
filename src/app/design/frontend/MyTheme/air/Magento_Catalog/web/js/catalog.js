@@ -6,63 +6,29 @@ define ([
     'fancybox',
     'accordion',
     'tabs'
-], function ($, swiperCatalog, tabs, fancybox, accordion) {
+], function ($, swiperCatalog, fancybox, accordion) {
     'use strict';
 
     $.widget( 'mytheme.catalog', {
-        // вызов инлайновой функции из phtml
         options:{
             wrapper_fancybox: null,
             size_chart: null,
             size_chart_tab: null,
-            wrapper_accordion: null,
-            our_mission: null,
-            wrapper_tab: null,
             product_accordion: null,
             related_slider: null,
+            hide_empty_content: null,
         },
         _create: function() {
             let self = this;
             this.createSizeChart();
             this.createSizeChartTab();
             this.createProductAccordion();
-            this.createTab();
             this.createSwiperRelated();
+            this.hideEmptyContent();
         },
-        hideElement: function () {
-            // var element = $(".our-mission").attr("display", "none");
-            // if ($(".our-mission").attr("display", "none")) {
-            //     $('#tab-label-detail.product').hide();
-            // }
-            // $('.our-mission[style="display:none"]').ready(function (){
-            //     $('#tab-label-detail.product').hide();
-            // });
-        },
-        createSizeChart: function () {
-            $(this.element).fancybox()
-        },
-        createSizeChartTab: function () {
-            $(this.element).tabs()
-        },
-        showThisBlock: function () {
-            let content = $(this.options.content);
-            modal(this.options.config, content);
-            content.modal('openModal')
-        },
-        createProductAccordion: function () {
-            $(this.element).accordion({
-                collapsible: true,
-            })
-        },
-        createTab: function () {
-            $(this.element).tabs({
-                duration: 700,
-            });
-        },
+
         createSwiperRelated: function () {
-            let swiperCatalog = new Swiper('.related-slider', {
-                slidesPerView: '3',
-                spaceBetween: 20,
+            let swiper = new swiperCatalog('.related-slider', {
                 freeMode: true,
                 speed: 700,
                 loop: true,
@@ -71,13 +37,44 @@ define ([
                     delay: 4000,
                 },
                 breakpoints: {
-                    470: {
+                    320: {
                         slidesPerView: 2,
+                    },
+                    550: {
+                        slidesPerView: 3,
                         spaceBetween: 10,
+                    },
+                    720: {
+                        slidesPerView: 4,
+                        spaceBetween: 15,
+                    },
+                    1024: {
+                        slidesPerView: 5,
+                        spaceBetween: 20,
                     }
                 }
             });
         },
+
+        createSizeChart: function () {
+            $(this.element).fancybox()
+        },
+        createSizeChartTab: function () {
+            $(this.element).tabs()
+        },
+        createProductAccordion: function () {
+            $(this.element).accordion({
+                active: 1,
+                collapsible: true,
+            })
+        },
+        hideEmptyContent: function () {
+            $(".detail-inner[style*='display: none']").ready(function (){
+                $(".detail-inner").parent().addClass('hide')
+                $("#tab-label-detail.product").addClass('hide')
+            })
+        },
+
     });
     return $.mytheme.catalog;
 

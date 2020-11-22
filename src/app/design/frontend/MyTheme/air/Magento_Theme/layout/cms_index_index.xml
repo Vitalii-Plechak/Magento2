@@ -39,15 +39,6 @@
         <container name="journey" htmlClass="journey" htmlTag="section">
             <block name="journey-block" template="Magento_Theme::journey.phtml"></block>
         </container>
-        <container name="accordion" htmlClass="accordion" htmlTag="section">
-            <block name="accordion-block" template="Magento_Theme::accordion.phtml"></block>
-        </container>
-        <container name="modal-widget" htmlClass="modal-widget" htmlTag="section">
-            <block name="modal-widget-block" template="Magento_Theme::modal-widget.phtml"></block>
-        </container>
-        <container name="tab" htmlClass="tab" htmlTag="section">
-            <block name="tab-block" template="Magento_Theme::tab.phtml"></block>
-        </container>
     </referenceContainer>
 </body>
 </page>

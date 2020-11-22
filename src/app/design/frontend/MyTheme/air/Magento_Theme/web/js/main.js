@@ -3,10 +3,10 @@
 define ([
     'jquery',
     'swiper',
-    'modal',
+    // 'modal',
     'fancybox',
-    'accordion',
-    'tabs'
+    // 'accordion',
+    // 'tabs'
 ], function ($, Swiper, modal) {
     'use strict';
 
@@ -32,22 +32,13 @@ define ([
             let self = this;
             this.createFancybox();
             this.createSwiper();
-            this.createAccordion();
-            this.createProductAccordion();
-            this.hideElement();
-            $('body').on('click', this.options.triggerClass, function () {
-                self.showThisBlock()
-            });
-            this.createTab();
-        },
-        hideElement: function () {
-            // var element = $(".our-mission").attr("display", "none");
-            // if ($(".our-mission").attr("display", "none")) {
-            //     $('#tab-label-detail.product').hide();
-            // }
-            // $('.our-mission[style="display:none"]').ready(function (){
-            //     $('#tab-label-detail.product').hide();
+            // this.createAccordion();
+            // this.createProductAccordion();
+            // this.hideElement();
+            // $('body').on('click', this.options.triggerClass, function () {
+            //     self.showThisBlock()
             // });
+            // this.createTab();
         },
         createSwiper: function () {
             let swiper = new Swiper('.products-slider__inner', {
@@ -92,24 +83,24 @@ define ([
                 }
             })
         },
-        createAccordion: function () {
-            $(this.element).accordion()
-        },
-        createProductAccordion: function () {
-            $(this.element).accordion({
-                collapsible: true,
-            })
-        },
-        showThisBlock: function () {
-            let content = $(this.options.content);
-            modal(this.options.config, content);
-            content.modal('openModal')
-        },
-        createTab: function () {
-            $(this.element).tabs({
-                duration: 700,
-            });
-        }
+        // createAccordion: function () {
+        //     $(this.element).accordion()
+        // },
+        // createProductAccordion: function () {
+        //     $(this.element).accordion({
+        //         collapsible: true,
+        //     })
+        // },
+        // showThisBlock: function () {
+        //     let content = $(this.options.content);
+        //     modal(this.options.config, content);
+        //     content.modal('openModal')
+        // },
+        // createTab: function () {
+        //     $(this.element).tabs({
+        //         duration: 700,
+        //     });
+        // }
     });
 
     return $.mytheme.fancybox;
