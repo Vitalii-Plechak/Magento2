@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-<!-- remove element-->
+    <!-- remove element-->
         <referenceBlock name="catalog.compare.link" remove="true" />
         <referenceBlock name="catalog.compare.sidebar" remove="true"/>
         <referenceBlock name="catalogsearch.product.addto.compare" remove="true"/>
@@ -11,7 +11,7 @@
         <referenceBlock name="upsell.product.addto.compare" remove="true" />
         <referenceBlock name="view.addto.compare" remove="true" />
         <referenceBlock name="header" remove="true"/>
-<!-- remove element-->
+    <!-- remove element-->
         <referenceBlock name="header.links">
             <block class="Magento\Framework\View\Element\Html\Link" name="test_li" before="-">
                 <arguments>

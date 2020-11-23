@@ -6,48 +6,20 @@
  */
 -->
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-        <css src="mage/gallery/gallery.css"/>
-    </head>
-    <update handle="catalog_product_opengraph" />
-    <update handle="page_calendar"/>
     <body>
-        <attribute name="itemtype" value="http://schema.org/Product" />
-        <attribute name="itemscope" value="itemscope"/>
-        <referenceBlock name="head.components">
-            <block class="Magento\Framework\View\Element\Js\Components" name="checkout_page_head_components" template="Magento_Catalog::js/components.phtml"/>
-        </referenceBlock>
-        <referenceBlock name="page.main.title">
-            <arguments>
-                <argument name="css_class" xsi:type="string">product</argument>
-                <argument name="add_base_attribute" xsi:type="string">itemprop="name"</argument>
-                <argument name="translate" xsi:type="boolean">false</argument>
-            </arguments>
-        </referenceBlock>
-        <referenceBlock name="root">
-            <arguments>
-                <argument name="add_attribute" xsi:type="string">itemscope itemtype="http://schema.org/Product"</argument>
-            </arguments>
-        </referenceBlock>
+        <!--move element-->
+            <move element="product.info.stock.sku" destination="product.info.main" after="page.main.title" />
+            <move element="product.info.stock.sku" destination="product.info.main" before="product.info.price" />
+            <move element="product.info.overview" destination="product.info.main" after="banner_product"/>
+            <move element="banner_product" destination="product.info.main" after="product.info.price" />
+            <move element="size-chart" destination="product.info.options.wrapper" after="-" />
+        <!--move element-->
 
-        <referenceBlock name="breadcrumbs" template="Magento_Catalog::product/breadcrumbs.phtml">
-            <arguments>
-                <argument name="viewModel" xsi:type="object">Magento\Catalog\ViewModel\Product\Breadcrumbs</argument>
-            </arguments>
-        </referenceBlock>
-<!--move element-->
-        <move element="product.info.stock.sku" destination="product.info.main" after="page.main.title" />
-        <move element="product.info.stock.sku" destination="product.info.main" before="product.info.price" />
-        <move element="product.info.overview" destination="product.info.main" after="banner_product"/>
-        <move element="banner_product" destination="product.info.main" after="product.info.price" />
-        <move element="size-chart" destination="product.info.options.wrapper" after="-" />
-<!--move element-->
+        <!--remove element-->
+            <referenceBlock name="product.attributes" remove="true" />
+        <!--remove element-->
 
-<!--remove element-->
-<!--        <referenceBlock name="product.info.description" remove="true" />-->
-<!--remove element-->
 
-        <referenceBlock name="product.attributes" remove="true" />
         <referenceContainer name="content">
             <container name="product.info.main" htmlTag="div" htmlClass="product-info-main" before="-">
                 <container name="product.info.price" label="Product info auxiliary container" htmlTag="div" htmlClass="product-info-price">
@@ -74,7 +46,11 @@
                     </block>
                 </container>
                 <container name="banner_product" htmlClass="banner_product" htmlTag="div">
-                    <block name="banner_product-block" template="Magento_Catalog::banner-product.phtml"></block>
+                    <block class="Magento\Cms\Block\Block" name="banner_product-block">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">banner_product</argument>
+                        </arguments>
+                    </block>
                 </container>
                 <container name="size-chart" htmlClass="size-chart" htmlTag="div">
                     <block name="size-chart-block" template="Magento_Catalog::size-chart.phtml"></block>
@@ -206,7 +182,19 @@
         </referenceContainer>
         <referenceContainer name="content">
             <container name="why-love-it" htmlClass="custom-block why-love-it" htmlTag="div">
-                <block name="why-love-it-block" template="Magento_Catalog::why-we-love-it.phtml"></block>
+                <block class="Magento\Cms\Block\Block" name="why-we-love-it_block">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">why-we-love-it</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="why-love-it_link">
+                    <arguments>
+                        <argument name="label" xsi:type="string">Get yours today</argument>
+                        <argument name="title" xsi:type="string">Get yours today</argument>
+                        <argument name="path" xsi:type="string">men/tops-men</argument>
+                        <argument name="class" xsi:type="string">why-love-it-button</argument>
+                    </arguments>
+                </block>
             </container>
         </referenceContainer>
         <referenceContainer name="content.aside">

@@ -16,7 +16,6 @@ define ([
             size_chart_tab: null,
             product_accordion: null,
             related_slider: null,
-            hide_empty_content: null,
         },
         _create: function() {
             let self = this;
@@ -24,7 +23,6 @@ define ([
             this.createSizeChartTab();
             this.createProductAccordion();
             this.createSwiperRelated();
-            this.hideEmptyContent();
         },
 
         createSwiperRelated: function () {
@@ -66,12 +64,6 @@ define ([
             $(this.element).accordion({
                 active: 1,
                 collapsible: true,
-            })
-        },
-        hideEmptyContent: function () {
-            $(".detail-inner[style*='display: none']").ready(function (){
-                $(".detail-inner").parent().addClass('hide')
-                $("#tab-label-detail.product").addClass('hide')
             })
         },
 
