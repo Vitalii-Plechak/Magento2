@@ -54,9 +54,16 @@
         }
 
         .product-options-wrapper {
+            .fieldset{
+                margin-bottom: 10px;
+            }
+            .swatch-attribute-options{
+                margin-bottom: 5px;
+            }
             .swatch-opt {
                 display: flex;
                 flex-direction: column;
+                margin-bottom: 10px;
                 .swatch-attribute.size {
                     order: 2;
                     .swatch-option.text {
@@ -92,6 +99,23 @@
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 font-weight: 700;
+                span{
+                    position: relative;
+                    padding-right: 25px;
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        background-image: url("@{url}");
+                        .lib-url('images/icon-shoppingbag--tocart.svg');
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        top: 40%;
+                        transform: translateY(-50%);
+                        right: 0;
+                        width: 18px;
+                        height: 17px;
+                    }
+                }
             }
         }
     }
@@ -360,11 +384,50 @@
         }
     }
 
+    //add to bag button
+    .product-info-main .product-options-bottom {
+        .box-tocart{
+            margin-bottom: 0;
+            .fieldset{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .box-tocart .action.tocart:not(:last-child){
+        margin-bottom: 5px;
+    }
+
+    //wish list
+    .product-social-links{
+        max-width: 355px;
+        text-align: right;
+        .action.towishlist{
+            position: relative;
+            margin: unset;
+            padding-right: 8%;
+            &::before{
+                position: absolute;
+                right: 0;
+                top: 2px;
+                margin: unset;
+                font-size: 14px;
+            }
+        }
+    }
 }
 
 //
 //  Mobile
 //  _____________________________________________
+
+@media only screen and (max-width: @screen__l) {
+    .media-width('max', (@screen__l));
+    .product-info-main .product-options-bottom .field.qty{
+        position: relative !important;
+        bottom: unset !important;
+        left: unset !important;
+    }
+}
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .why-love-it .container{
@@ -383,9 +446,9 @@
     }
 }
 
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
-    .product-info-main .product-options-bottom .field.qty{
-        left: 235px !important ;
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .product-social-links{
+        text-align: right;
     }
 }
 
@@ -393,4 +456,7 @@
 //  Desktop
 //  _____________________________________________
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {}
+
+
+
+
